@@ -1,2 +1,2 @@
 # wp-customizer
-WordPress Customizer Practice
+wp customizer practice
