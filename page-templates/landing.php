@@ -60,7 +60,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="service">
-                                <i class="fas fa-haykal"></i>
+                                <i class="far fa-hospital"></i>
                                 <h2>Service Name</h2>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet animi dolorem eveniet
                                     harum ipsum necessitatibus nihil, pariatur praesentium quia voluptate.</p>
