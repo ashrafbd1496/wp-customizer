@@ -27,13 +27,19 @@ function customizer_setup(){
         'style',
         'script',
     ));
-    add_theme_support('custom-backgroun',apply_filters(
-        'customizer_custom_background_args',array(
 
-            'default-color'=>'#ffffff',
-            'default-image'=>'',
-        ),
-    ));
+    // Set up the WordPress core custom background feature.
+		add_theme_support(
+			'custom-background',
+			apply_filters(
+				'customizer_custom_background_args',
+				array(
+					'default-color' => 'ffffff',
+					'default-image' => '',
+				)
+			)
+		);
+
     add_theme_support('customize-selective-refresh-widgets');
     add_theme_support('custom-logo',array(
         'height'      => 250,
