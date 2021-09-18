@@ -27,12 +27,16 @@
                         //echo esc_html( get_option( 'cust_services_heading', __( 'Our Mission Statement', 'customizer' ) ) );
                         ?>
                     </h1>
+                    <?php
+                        if(get_theme_mod('cust_services_display_subheading', 1)):
+                    ?>
                     <p class="subheading">
                         <?php
                         echo esc_html(get_theme_mod('cust_services_subheading'), __('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet animi dolorem eveniet
                                 harum ipsum necessitatibus nihil, pariatur praesentium quia voluptate.', 'customizer'));
                         ?>
                     </p>
+                    <?php endif; ?>
                     <div class="row sub-section">
                         <div class="col-md-4">
                             <div class="service">
@@ -93,12 +97,13 @@
             unde.
         </p>
         <ul class="list-inline">
-            <li class="list-inline-item"><a href="#">Facebook</a></li>
-            <li class="list-inline-item"><a href="#">Twitter</a></li>
-            <li class="list-inline-item"><a href="#">Github</a></li>
+            <li class="list-inline-item"><a href="https://fb.com/ashraf1496">Facebook</a></li>
+            <li class="list-inline-item"><a href="https://twitter.com/ashraf1496">Twitter</a></li>
+            <li class="list-inline-item"><a href="https://github.com/ashrafuddin1496">Github</a></li>
         </ul>
     </div>
 </body>
 <?php wp_footer(); ?>
 
 </html>
+

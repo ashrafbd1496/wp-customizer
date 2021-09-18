@@ -1,4 +1,5 @@
 <?php
+require_once('inc/customizer.php');
 
 if(site_url() == 'http://localhost/customizer'){
 
@@ -67,7 +68,7 @@ function customizer_assets(){
 
     wp_enqueue_style('fotns-css', '//fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap',false);
     wp_enqueue_style('bootstrap-css', get_theme_file_uri('assets/css/bootstrap.min.css'));
-    wp_enqueue_style('customizer-css', get_stylesheet_uri() );
+    wp_enqueue_style( 'main-style', get_stylesheet_uri(),null,time() );
 
     //scripts
     wp_enqueue_script('jquery-js', get_theme_file_uri('assets/js/jquery3.6.min.js',array('jquery'),'VERSION',true) );
@@ -82,52 +83,6 @@ function customizer_assets(){
 }
 add_action('wp_enqueue_scripts','customizer_assets');
 
-//customizer panel,section and controls
-
-function cust_customize_register($wp_customize)
-{
-    $wp_customize->add_section('cust_services',array(
-        'title'=>__('Services','customizer'),
-        'priority'=>'30',
-        'description' => __('Services','customizer'),
-        'capability' => 'edit_theme_options',
-        
-    ));
-
-    $wp_customize->add_setting('cust_services_heading', array(
-        'type' => 'theme_mod', // or 'option'
-        'capability' => 'edit_theme_options',
-        'default' => 'Mission Statement',
-        'transport' => 'refresh', // or postMessage
-       
-    ));
-
-    $wp_customize->add_control('cust_services_heading_ctrl', array(
-        'label' => __('Service Heading','customizer'),
-        'type' => 'text',
-        'section' => 'cust_services',
-        'settings' => 'cust_services_heading',
-
-    ));
-
-    //subheading
-    $wp_customize->add_setting('cust_services_subheading', array(
-        'type' => 'theme_mod', // or 'option'
-        'capability' => 'edit_theme_options',
-        'transport' => 'refresh', // or postMessage
-
-    ));
-
-    $wp_customize->add_control('cust_services_subheading_ctrl', array(
-        'label' => __('Service Sub Heading', 'customizer'),
-        'type' => 'textarea',
-        'section' => 'cust_services',
-        'settings' => 'cust_services_subheading',
-
-    ));
-
-}
-add_action('customize_register', 'cust_customize_register');
 
 
 
