@@ -75,5 +75,17 @@ function cust_customize_register($wp_customize)
 
     ));
 
+    //Service Section icon color change
+    $wp_customize->add_setting('cust_service_icon_color_setting',array(
+        'default'=>'#dd2d6a',
+        'transport'=>'refresh',
+    ));
+    $wp_customize->add_control(new WP_customize_Color_Control($wp_customize,'cust_service_icon_color_ctrl',array(
+        'label'=>__('Icon Color','customizer'),
+        'section'=>__('cust_services','customizer'),
+        'settings'=>__('cust_service_icon_color_setting','customizer'),
+    )));
+  
+
 }
 add_action('customize_register', 'cust_customize_register');
