@@ -85,6 +85,22 @@ function cust_customize_register($wp_customize)
         'section'=>__('cust_services','customizer'),
         'settings'=>__('cust_service_icon_color_setting','customizer'),
     )));
+
+    //Service items display 
+    $wp_customize->add_setting('cust_services_number_of_items_setting',array(
+        'default'=>'4',
+        'transport'=>'refresh',
+    ));
+  $wp_customize->add_control('cust_services_number_of_items_ctrl',array(
+    'label'=>__('Number of Items','customizer'),
+    'section'=>'cust_services',
+    'settings'=>'cust_services_number_of_items_setting',
+    'type'=>'select',
+    'choices'=>array(
+        '4'=>'3 In Each Row',
+        '6'=>'2 In Each Row',
+    )
+  ));
   
 
 }
