@@ -40,6 +40,7 @@ function cust_customize_register($wp_customize)
         'type' => 'textarea',
         'section' => 'cust_services',
         'settings' => 'cust_services_subheading',
+        'active_callback'=>'display_service_subheading',
 
     ));
 
@@ -47,20 +48,22 @@ function cust_customize_register($wp_customize)
     $wp_customize->add_setting('cust_services_display_subheading', array(
         'default'=>1,
         'transport' => 'refresh', // or postMessage
+        
+
     ));
     $wp_customize->add_control('cust_services_display_subheading_ctrl', array(
         'label' => __('Display Subheading', 'customizer'),
         'type' => 'checkbox',
         'section' => 'cust_services',
         'settings' => 'cust_services_display_subheading',
-        'active_callback'=>'display_service_subheading',
+       
 
     ));
 
     //Dropdown demo section
     $wp_customize->add_section('cust_services-dropdown_section',array(
         'title'=>__('Services Dropdown Demo','customizer'),
-        'priority'=>'50',
+        'priority'=>'50',     
         
     ));
     $wp_customize->add_setting('cust_services-dropdown_setting', array(
@@ -108,5 +111,8 @@ function cust_customize_register($wp_customize)
 add_action('customize_register', 'cust_customize_register');
 
 function display_service_subheading(){
+    if(get_theme_mod('cust_services_display_subheading')==1){
+        return true;
+    }
     return false;
 }
