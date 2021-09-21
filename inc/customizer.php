@@ -53,6 +53,7 @@ function cust_customize_register($wp_customize)
         'type' => 'checkbox',
         'section' => 'cust_services',
         'settings' => 'cust_services_display_subheading',
+        'active_callback'=>'display_service_subheading',
 
     ));
 
@@ -105,3 +106,7 @@ function cust_customize_register($wp_customize)
 
 }
 add_action('customize_register', 'cust_customize_register');
+
+function display_service_subheading(){
+    return false;
+}
