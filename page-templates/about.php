@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: Customizer Landing
+ * Template Name: About Page
  */
 ?>
 <!DOCTYPE html>
@@ -22,24 +22,11 @@
             <div class="col-md-12">
                 <div class="mission section">
                     <h1 class="heading">
-                        <?php
-                        echo esc_html(get_theme_mod('cust_services_heading', __('Our Mission Statement', 'customizer')));
-                        //echo esc_html( get_option( 'cust_services_heading', __( 'Our Mission Statement', 'customizer' ) ) );
-                        ?>
+                        <?php echo esc_html(get_theme_mod('cust_about_setting', __('About Page Heading', 'customizer')));?>
                     </h1>
-                    <?php
-                        if(get_theme_mod('cust_services_display_subheading', 1)):
-                    ?>
                     <p class="subheading">
-                        <?php
-                        echo esc_html(get_theme_mod('cust_services_subheading'), __('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet animi dolorem eveniet
-                                harum ipsum necessitatibus nihil, pariatur praesentium quia voluptate.', 'customizer'));
-                        ?>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident autem aliquid at labore non quo voluptates corrupti vitae quidem deserunt.
                     </p>
-                    <?php endif; 
-                        $cust_column =  get_theme_mod('cust_services_number_of_items_setting',4);
-                    ?>
-                    
                     <div class="row sub-section">
                         <div class="col-md-<?php echo esc_attr($cust_column); ?> ">
                             <div class="service">

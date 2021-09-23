@@ -8,6 +8,9 @@ function cust_customize_register($wp_customize)
         'priority'=>'100',
         'description' => __('Services','customizer'),
         'capability' => 'edit_theme_options',
+        'active_callback'=>function (){
+            return is_page_template('page-templates/landing.php');
+        }
         
     ));
 
@@ -16,6 +19,7 @@ function cust_customize_register($wp_customize)
         'capability' => 'edit_theme_options',
         'default' => 'Mission Statement',
         'transport' => 'refresh', // or postMessage
+        
        
     ));
 
@@ -105,6 +109,33 @@ function cust_customize_register($wp_customize)
         '6'=>'2 In Each Row',
     )
   ));
+
+  //About Page Customizer Options
+  $wp_customize->add_section('cust_about_section',array(
+    'title'=>__('About Page','customizer'),
+    'priority'=>'50',
+    'active_callback'=> function() {
+        if(is_page_template('page-templates/about.php')){
+            return true;
+        }
+        return false;
+    }
+  
+));
+
+$wp_customize->add_setting('cust_about_setting', array(
+    'default'=>'About Page Heading',
+    'transport' => 'refresh', // or postMessage
+   
+));
+
+$wp_customize->add_control('cust_about_ctrl', array(
+    'label' => __('About Page Heading','customizer'),
+    'type' => 'text',
+    'section' => 'cust_about_section',
+    'settings' => 'cust_about_setting',
+
+));
   
 
 }
