@@ -18,7 +18,7 @@ function cust_customize_register($wp_customize)
         'type' => 'theme_mod', // or 'option'
         'capability' => 'edit_theme_options',
         'default' => 'Mission Statement',
-        'transport' => 'refresh', // or postMessage
+        'transport' => 'postMessage', // or postMessage
         
        
     ));

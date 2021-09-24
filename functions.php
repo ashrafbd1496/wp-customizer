@@ -68,7 +68,7 @@ function customizer_assets()
     wp_enqueue_style('fontawesome-css', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
 
     wp_enqueue_style('fotns-css', '//fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap', false);
-    wp_enqueue_style('bootstrap-css', get_theme_file_uri('assets/css/bootstrap.min.css'));
+    wp_enqueue_style('bootstrap-css', get_theme_file_uri('assets/css/bootstrap.min.css'),null,time());
     wp_enqueue_style('main-style', get_stylesheet_uri(), null, time());
 
     //inline style added to change customizer service icon color
@@ -84,11 +84,21 @@ EOD;
     //scripts
     wp_enqueue_script('jquery-js', get_theme_file_uri('assets/js/jquery3.6.min.js', array('jquery'), 'VERSION', true));
 
-    wp_enqueue_script('booststrap-js', get_theme_file_uri('assets/js/bootstrap.min.js', array('jquery'), true));
+    wp_enqueue_script('booststrap-js', get_theme_file_uri('assets/js/bootstrap.min.js', array('jquery'),'VERSION', true));
 
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
     }
-    wp_enqueue_script('customizer-js', get_theme_file_uri('assets/js/customizer.js'));
+   
 }
 add_action('wp_enqueue_scripts', 'customizer_assets');
+
+//hook to add customizer js for customize option
+function cust_customizer_assets() {
+	wp_enqueue_script( "cust-customizer-js", get_theme_file_uri( "/assets/js/customizer.js" ), array(
+		'jquery',
+		'customize-preview'
+	), time(), true );
+}
+
+add_action( "customize_preview_init", 'cust_customizer_assets' );
