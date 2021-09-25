@@ -22,7 +22,14 @@
             <div class="col-md-12">
                 <div class="mission section">
                     <h1 class="heading">
-                        <?php echo esc_html(get_theme_mod('cust_about_setting', __('About Page Heading', 'customizer')));?>
+                         <?php 
+
+                         //echo esc_html(get_theme_mod('cust_about_setting', __('About Page Heading', 'customizer')));
+                        $options = get_option( 'csf_customizer' ); // unique id of the framework
+
+                        echo esc_html($options['about_heading']) ;
+                    ?>
+
                     </h1>
                     <p class="subheading">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident autem aliquid at labore non quo voluptates corrupti vitae quidem deserunt.

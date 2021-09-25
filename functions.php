@@ -1,5 +1,6 @@
 <?php
 require_once('inc/customizer.php');
+require_once('inc/csf-customizer.php');
 
 if (site_url() == 'http://localhost/customizer') {
 
