@@ -32,8 +32,11 @@
 
                     </h1>
                     <p class="subheading">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident autem aliquid at labore non quo voluptates corrupti vitae quidem deserunt.
-                    </p>
+                    <?php 
+
+                    echo esc_html($options['about_description']) ;
+                    ?>
+                        </p>
                     <div class="row sub-section">
                         <div class="col-md-<?php echo esc_attr($cust_column); ?> ">
                             <div class="service">

@@ -29,61 +29,36 @@ CSF::createSection( $prefix, array(
     ),
 
     array(
-      'id'    => 'opt-overview-textarea',
-      'type'  => 'textarea',
-      'title' => 'Textarea',
-      'help'  => 'The help text of the field.',
+      'id'    => 'about_description',
+      'type'  => 'textarea', 
+      'title' => 'About Description',
+      
     ),
-
-    // array(
-    //   'id'    => 'opt-upload',
-    //   'type'  => 'upload',
-    //   'title' => 'Upload',
-    // ),
-
-    // array(
-    //   'id'    => 'opt-overview-switcher',
-    //   'type'  => 'switcher',
-    //   'title' => 'Switcher',
-    //   'label' => 'The label text of the switcher.',
-    // ),
-
-    // array(
-    //   'id'      => 'opt-overview-color',
-    //   'type'    => 'color',
-    //   'title'   => 'Color',
-    //   'default' => '#3498db',
-    // ),
-
-    // array(
-    //   'id'    => 'opt-overview-checkbox',
-    //   'type'  => 'checkbox',
-    //   'title' => 'Checkbox',
-    //   'label' => 'The label text of the checkbox.',
-    // ),
-
-    // array(
-    //   'id'      => 'opt-overview-radio',
-    //   'type'    => 'radio',
-    //   'title'   => 'Radio',
-    //   'options' => array(
-    //     'yes'   => 'Yes, Please.',
-    //     'no'    => 'No, Thank you.',
-    //   ),
-    //   'default' => 'yes',
-    // ),
-
-    // array(
-    //   'id'          => 'opt-overview-select',
-    //   'type'        => 'select',
-    //   'title'       => 'Select',
-    //   'placeholder' => 'Select an option',
-    //   'options'     => array(
-    //     'opt-1'     => 'Option 1',
-    //     'opt-2'     => 'Option 2',
-    //     'opt-3'     => 'Option 3',
-    //   ),
-    //),
+    array(
+      'id'          => 'select_page',
+      'type'        => 'select',
+      'title'       => 'Select a page',
+      'placeholder' => 'Select a page',
+      'options'     => 'pages',
+    ),
+    array(
+      'id'          => 'opt-select-8',
+      'type'        => 'select',
+      'title'       => 'Select with multiple AJAX search Pages',
+      'chosen'      => true,
+      'multiple'    => true,
+      'sortable'    => true,
+      'ajax'        => true,
+      'options'     => 'pages',
+      'placeholder' => 'Select pages',
+    ),
+    array(
+      'id'          => 'opt-select-12',
+      'type'        => 'select',
+      'title'       => 'Select with posts',
+      'placeholder' => 'Select a post',
+      'options'     => 'posts',
+    ),
 
   )
 ) );
