@@ -42,6 +42,7 @@
                             <div class="service">
                                 <i class="far fa-building"></i>
                                 <h2>Service Name</h2>
+                              
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet animi dolorem eveniet
                                     harum ipsum necessitatibus nihil, pariatur praesentium quia voluptate.</p>
                             </div>

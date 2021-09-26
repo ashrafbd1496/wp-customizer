@@ -14,7 +14,7 @@ CSF::createCustomizeOptions( $prefix );
 // Create a section
 //
 CSF::createSection( $prefix, array(
-  'title'    => 'CSF - Customizer',
+  'title'    => 'CodeStar Customizer Options',
   'priority' => 1,
   'fields'   => array(
 
@@ -26,6 +26,7 @@ CSF::createSection( $prefix, array(
       'type'  => 'text',
       'title' => 'About Heading',
       'default'=>__('About Heading','customizer'),
+      'transport' => 'postMessage',
     ),
 
     array(
