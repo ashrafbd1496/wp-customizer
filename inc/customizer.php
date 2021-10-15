@@ -125,7 +125,7 @@ function cust_customize_register($wp_customize)
 
 $wp_customize->add_setting('cust_about_setting', array(
     'default'=>'About Page Heading',
-    'transport' => 'refresh', // or postMessage
+    'transport' => 'postMessage', // or postMessage
    
 ));
 
@@ -135,6 +135,33 @@ $wp_customize->add_control('cust_about_ctrl', array(
     'section' => 'cust_about_section',
     'settings' => 'cust_about_setting',
 
+));
+$wp_customize->add_setting('cust_about_description_setting',array(
+    'default'=>'About Us description',
+    'transport'=>'postMessage'
+));
+$wp_customize->add_control('cust_about_description_ctrl', array(
+    'label' => __('About Page Headig Description','customizer'),
+    'type' => 'textarea',
+    'section' => 'cust_about_section',
+    'settings' => 'cust_about_description_setting',
+
+));
+
+$wp_customize->selective_refresh->add_partial('description_section',array(
+    'selector'=>'#about_description',
+    'settings'=>'cust_about_description_setting',
+    'render_callback'=>function(){
+        return get_theme_mod('cust_about_description_setting');
+    },
+));
+
+$wp_customize->selective_refresh->add_partial('about_section',array(
+    'selector'=>'#about_heading',
+    'settings'=>'cust_about_setting',
+    'render_callback'=>function(){
+        return get_theme_mod('cust_about_setting');
+    },
 ));
   
 

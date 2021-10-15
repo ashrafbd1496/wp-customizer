@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="mission section">
-                    <h1 class="heading">
+                    <h1 class="heading" id="about_heading">
                          <?php 
 
                          //echo esc_html(get_theme_mod('cust_about_setting', __('About Page Heading', 'customizer')));
@@ -29,14 +29,23 @@
 
                         echo esc_html($options['about_heading']) ;
                     ?>
-
                     </h1>
-                    <p class="subheading">
+            
+                     <p class="subheading">
                     <?php 
 
-                    echo esc_html($options['about_description']) ;
+                    //echo esc_html($options['about_description']) ;
                     ?>
                         </p>
+
+                        <p class="about_description" id="about_description">
+                    <?php 
+
+                       //echo apply_filters('the_content',get_theme_mod('cust_about_description'));
+                       echo esc_html($options['cust_about_description']) ;
+                    ?>
+                        </p>
+
                     <div class="row sub-section">
                         <div class="col-md-<?php echo esc_attr($cust_column); ?> ">
                             <div class="service">
