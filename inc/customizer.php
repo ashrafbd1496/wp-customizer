@@ -136,6 +136,10 @@ $wp_customize->add_control('cust_about_ctrl', array(
     'settings' => 'cust_about_setting',
 
 ));
+
+/**
+ * Selective Refresh
+ */
 $wp_customize->add_setting('cust_about_description_setting',array(
     'default'=>'About Us description',
     'transport'=>'postMessage'
@@ -164,7 +168,6 @@ $wp_customize->selective_refresh->add_partial('about_section',array(
     },
 )); 
 
-
 $wp_customize->add_section('image_upload',array(
     'title'=>__('Image Upload','customizer'),
     'priority'=>'51',     
@@ -183,6 +186,27 @@ $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize,'test_im
     'section' => 'image_upload',
     'settings' => 'image_and_upload_setting',
 )));
+
+/**
+ * Media Upload Control 
+ */
+$wp_customize->add_setting('media_upload_setting', array(
+    'default' => 'Upload Media',
+    'transport' => 'refresh', // or postMessage
+    
+   
+));
+
+$wp_customize->add_control(new WP_Customize_Media_Control($wp_customize,'media_upload_setting',array(
+    'label' => __('Upload a Media','customizer'),
+    'section' => 'image_upload',
+   
+)));
+
+
+
+
+
 
 }
 
