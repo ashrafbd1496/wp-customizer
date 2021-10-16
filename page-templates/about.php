@@ -45,6 +45,10 @@
                        echo esc_html($options['cust_about_description']) ;
                     ?>
                         </p>
+                        <?php
+                            $attachment_id = attachment_url_to_postid(get_theme_mod('image_and_upload_setting'));
+                            echo wp_get_attachment_image($attachment_id);
+                        ?>
 
                     <div class="row sub-section">
                         <div class="col-md-<?php echo esc_attr($cust_column); ?> ">

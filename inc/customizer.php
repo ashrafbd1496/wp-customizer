@@ -162,10 +162,30 @@ $wp_customize->selective_refresh->add_partial('about_section',array(
     'render_callback'=>function(){
         return get_theme_mod('cust_about_setting');
     },
+)); 
+
+
+$wp_customize->add_section('image_upload',array(
+    'title'=>__('Image Upload','customizer'),
+    'priority'=>'51',     
+    
 ));
-  
+
+$wp_customize->add_setting('image_and_upload_setting', array(
+    'default' => 'Upload Image',
+    'transport' => 'refresh', // or postMessage
+    
+   
+));
+
+$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize,'test_image',array(
+    'label' => __('Upload an Image','customizer'),
+    'section' => 'image_upload',
+    'settings' => 'image_and_upload_setting',
+)));
 
 }
+
 add_action('customize_register', 'cust_customize_register');
 
 function display_service_subheading(){
